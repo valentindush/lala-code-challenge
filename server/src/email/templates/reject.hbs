@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Request Update - Lala Rentals</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background-color: #f89b59;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 120px;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-weight: 600;
+            font-size: 26px;
+        }
+
+        .content {
+            padding: 30px 40px;
+        }
+
+        .booking-summary {
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .booking-detail {
+            margin-bottom: 10px;
+        }
+
+        .booking-detail strong {
+            color: #555;
+        }
+
+        .alternatives-section {
+            margin: 30px 0;
+        }
+
+        .alternatives-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .alternative-properties {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding-bottom: 15px;
+        }
+
+        .alternative-property {
+            min-width: 200px;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .alt-property-img {
+            height: 120px;
+            background-color: #f0f0f0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .alt-property-details {
+            padding: 10px;
+        }
+
+        .alt-property-name {
+            font-weight: 600;
+            margin: 0 0 5px 0;
+            font-size: 14px;
+        }
+
+        .alt-property-price {
+            color: #555;
+            font-size: 13px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #f89b59;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 500;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .host-message {
+            background-color: #f8f8f8;
+            border-left: 4px solid #ddd;
+            padding: 15px;
+            margin: 25px 0;
+            font-style: italic;
+        }
+
+        .support-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .footer {
+            background-color: #f7f7f7;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666666;
+        }
+
+        @media only screen and (max-width: 480px) {
+            .content {
+                padding: 20px;
+            }
+
+            .alternative-properties {
+                flex-direction: column;
+            }
+
+            .alternative-property {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Booking Request Update</h1>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <p>Hello {{guestName}},</p>
+            <p>We're sorry to inform you that your booking request for <strong>{{propertyName}}</strong> could not be
+                confirmed at this time.</p>
+
+            <div class="booking-summary">
+                <div class="booking-detail">
+                    <strong>Property:</strong> {{propertyName}}
+                </div>
+                <div class="booking-detail">
+                    <strong>Dates:</strong> {{checkIn}} to {{checkOut}}
+                </div>
+                <div class="booking-detail">
+                    <strong>Guests:</strong> {{guests}}
+                </div>
+                <div class="booking-detail">
+                    <strong>Booking ID:</strong> {{bookingId}}
+                </div>
+            </div>
+
+            <p>The host may not be able to accommodate your request for one of the following reasons:</p>
+            <ul>
+                <li>The property is no longer available for your requested dates</li>
+                <li>The property cannot accommodate your number of guests</li>
+                <li>The host's calendar was not updated to reflect availability</li>
+            </ul>
+
+            <a href="{{searchUrl}}" class="button">Continue Your Search</a>
+
+            <div class="support-section">
+                <p>If you have any questions or need assistance finding another property, our support team is here to
+                    help.</p>
+                <p>Contact us at <a href="mailto:support@lalarentals.com">support@lalarentals.com</a> or call
+                    {{supportPhone}}.</p>
+            </div>
+
+            <p>Thank you for your understanding.</p>
+
+            <p>Best regards,<br>The Lala Rentals Team</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© {{year}} Lala Rentals. All rights reserved.</p>
+            <p>
+                <small>This is a transactional email related to your Lala Rentals booking attempt.</small>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
